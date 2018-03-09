@@ -25,11 +25,20 @@
     "prettier": "^1.11.1",
     "react-scripts": "1.1.1",
     "stylelint": "^9.1.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.3.0"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.css": ["stylelint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "stylelint",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,10 +51,8 @@
     "lint:fix": "yarn run eslint --fix $(find src -name *.js)",
     "lint:style": "yarn run stylelint $(find src -name *.css)",
     "lint:style:fix": "yarn run stylelint --fix $(find src -name *.css)",
-    "prettier":
-      "prettier --no-semi --single-quote --write $(find src -name *.js)",
-    "prettier:diff":
-      "prettier --no-semi --single-quote --list-different $(find src -name *.js)",
+    "prettier": "prettier --no-semi --single-quote --write $(find src -name *.js)",
+    "prettier:diff": "prettier --no-semi --single-quote --list-different $(find src -name *.js)",
     "precommit": "lint-staged"
   }
 }
