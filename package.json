@@ -29,6 +29,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "lint": "yarn run eslint $(find src -name *.js)",
+    "lint:fix": "yarn run eslint --fix $(find src -name *.js)",
+    "prettier": "prettier --no-semi --single-quote --write $(find src -name *.js)",
+    "prettier:diff": "prettier --no-semi --single-quote --list-different $(find src -name *.js)"
   }
 }
