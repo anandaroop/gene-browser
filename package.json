@@ -32,12 +32,10 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "stylelint",
-      "git add"
+      "stylelint"
     ],
     "*.css": [
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ]
   },
   "scripts": {
@@ -49,8 +47,9 @@
     "build-storybook": "build-storybook -s public",
     "lint": "yarn run eslint $(find src -name *.js)",
     "lint:fix": "yarn run eslint --fix $(find src -name *.js)",
-    "lint:style": "yarn run stylelint $(find src -name *.css)",
-    "lint:style:fix": "yarn run stylelint --fix $(find src -name *.css)",
+    "lint:sc": "yarn run stylelint $(find src -name *.js)",
+    "lint:css": "yarn run stylelint $(find src -name *.css)",
+    "lint:css:fix": "yarn run stylelint --fix $(find src -name *.css)",
     "prettier": "prettier --no-semi --single-quote --write $(find src -name *.js)",
     "prettier:diff": "prettier --no-semi --single-quote --list-different $(find src -name *.js)",
     "precommit": "lint-staged"
