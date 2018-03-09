@@ -20,8 +20,16 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "react-scripts": "1.1.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,6 +41,7 @@
     "lint": "yarn run eslint $(find src -name *.js)",
     "lint:fix": "yarn run eslint --fix $(find src -name *.js)",
     "prettier": "prettier --no-semi --single-quote --write $(find src -name *.js)",
-    "prettier:diff": "prettier --no-semi --single-quote --list-different $(find src -name *.js)"
+    "prettier:diff": "prettier --no-semi --single-quote --list-different $(find src -name *.js)",
+    "precommit": "lint-staged"
   }
 }
