@@ -5,6 +5,8 @@
   },
   "extends": ["standard", "standard-react"],
   "rules": {
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "jsx-quotes": ["warn", "prefer-double"],
+    "quotes": ["warn", "double"]
   }
 }
