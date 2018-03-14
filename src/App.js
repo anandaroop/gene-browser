@@ -1,4 +1,10 @@
 import React, { Component } from "react"
+import { GeneBrowser } from "./GeneBrowser"
+import styled from "styled-components"
+
+const Spinner = styled.div`
+  color: gray;
+`
 
 class App extends Component {
   constructor(props) {
@@ -17,12 +23,11 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.state.isLoading
-          ? "loading…"
-          : `${this.state.genes.length} genes loaded`}
-      </div>
+    const { isLoading, genes } = this.state
+    return isLoading ? (
+      <Spinner>loading…</Spinner>
+    ) : (
+      <GeneBrowser genes={genes} />
     )
   }
 }
